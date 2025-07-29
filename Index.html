@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Do you love me?</title>
+<style>
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("./images (56).jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.inner-page {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  
+}
+
+.button {
+  padding: 25px 60px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 35px;
+}
+p{
+    font-size :40px;
+}
+
+.button-yes {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.button-no {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="inner-page">
+  <p><strong>Do you love me?</strong><p>
+  <button class="button button-yes">Yes</button>
+  <button class="button button-no" id="noButton">No</button>
+</div>
+
+<script>
+const noButton = document.getElementById("noButton");
+const innerPage = document.querySelector(".inner-page");
+
+noButton.addEventListener("click", () => {
+  let maxX = window.innerWidth - noButton.offsetWidth;
+  let maxY = innerPage.offsetHeight - noButton.offsetHeight;
+  let newX = Math.random() * maxX;
+  let newY = Math.random() * maxY;
+  noButton.style.position = "absolute";
+  noButton.style.left = newX + "px";
+  noButton.style.top = newY + "px";
+});
+</script>
+
+</body>
+</html>
+
